@@ -1,152 +1,163 @@
-📝 Mini Task Management System
+# Mini Task Management System
 
-A simple full-stack task management application that allows users to create, view, update, delete, and filter tasks.
-The focus of this project is clean logic, proper structure, and clear thinking, not heavy UI or complex libraries.
+A simple full-stack task management application built using **React** (frontend) and **Node.js + Express** (backend).
+The project focuses on clean logic, clear structure, and proper frontend–backend integration rather than complex UI.
 
-🎯 Objective
+---
 
-To build a minimal full-stack application that demonstrates:
+## Prerequisites
 
-REST API design
+Ensure the following are installed on your system:
 
-Frontend–backend integration
+- Node.js (v16 or later)
+- npm
+- Git
 
-Component-based React architecture
+Verify installations:
+```bash
+node -v
+npm -v
+git --version
+```
 
-Proper state handling and user interactions
+---
 
-🛠 Tech Stack
-Frontend
+## Project Setup (Step-by-Step)
 
-React
+### 1. Clone the Repository
 
-Axios
+```bash
+git clone https://github.com/<your-username>/mini-task-management-system.git
+cd mini-task-management-system
+```
 
-CSS (basic styling)
+---
 
-Backend
+### 2. Install Dependencies
 
-Node.js
+#### Backend
+```bash
+cd backend
+npm install
+```
 
-Express.js
+#### Frontend
+```bash
+cd ../frontend
+npm install
+```
 
-UUID
+---
 
-CORS
+### 3. Environment Configuration (Optional)
 
-✨ Features
+Create a `.env` file inside the `backend` folder:
 
-➕ Create new tasks
+```env
+PORT=5001
+```
 
-📋 View all tasks
+> `.env` is ignored by Git for security reasons.
 
-🔄 Update task status (Todo / In-Progress / Done)
+---
 
-🗑 Delete tasks
+### 4. Run Frontend & Backend Together
 
-🔍 Filter tasks by status
+From the **project root directory**:
 
-⏳ Loading and error handling
+```bash
+npm run dev
+```
 
-▶️ Run backend & frontend with a single command
+This single command:
+- Starts the backend on **http://localhost:5001**
+- Starts the frontend on **http://localhost:3000**
 
-📂 Project Structure
-mini-assessment/
-├── backend/
-│   ├── index.js
-│   └── package.json
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   ├── styles/
-│   │   └── App.js
-│   └── package.json
-│
-├── package.json   (root – for concurrently)
-└── README.md
+---
 
-🔗 Backend API Endpoints
-1️⃣ Get all tasks
+### 5. Open in Browser
+
+- Frontend UI → http://localhost:3000
+- Backend API → http://localhost:5001/tasks
+
+---
+
+## API Endpoints
+
+### Get all tasks
+```
 GET /tasks
+```
 
-2️⃣ Create a task
+### Create a task
+```
 POST /tasks
-
-
-Request Body
-
+```
+```json
 {
   "title": "Task title",
   "description": "Task description"
 }
+```
 
-3️⃣ Update task status
+### Update task status
+```
 PATCH /tasks/:id
-
-
-Request Body
-
+```
+```json
 {
   "status": "done"
 }
+```
 
-4️⃣ Delete a task
+### Delete a task
+```
 DELETE /tasks/:id
+```
 
-▶️ How to Run the Project
-🔹 Step 1: Install dependencies
+---
 
-Backend
+## Features
 
-cd backend
-npm install
+- Create, view, update, and delete tasks
+- Task status management (Todo / In-Progress / Done)
+- Filter tasks by status
+- Loading and error handling
+- Single-command startup using `concurrently`
 
+---
 
-Frontend
+## Project Structure
 
-cd frontend
-npm install
+```
+mini-task-management-system/
+├── backend/
+│   ├── index.js
+│   ├── package.json
+│   └── node_modules/
+│
+├── frontend/
+│   ├── src/
+│   ├── package.json
+│   └── node_modules/
+│
+├── .gitignore
+├── package.json
+└── README.md
+```
 
-🔹 Step 2: Run both backend & frontend together
+---
 
-From the root folder:
+## Notes
 
-npm run dev
+- Task data is stored in memory (no database).
+- Restarting the backend clears all tasks.
+- `node_modules` are excluded from GitHub using `.gitignore`.
+- This project is intended for learning and assessment purposes.
 
-🔹 Step 3: Open in browser
+---
 
-Frontend → http://localhost:3000
+## Author
 
-Backend → http://localhost:5001/tasks
-
-⚠️ Notes
-
-Data is stored in memory (no database).
-
-Restarting the backend will reset tasks.
-
-Project is designed for assessment/demo purposes.
-
-Emphasis is on logic and clarity, not UI libraries.
-
-🧠 What This Project Demonstrates
-
-RESTful API design
-
-React component composition
-
-State and effect management
-
-Error handling and UX feedback
-
-Full-stack integration
-
-Development workflow optimization using concurrently
-
-👤 Author
-
-Fakruddin
+**Fakruddin**
 MCA Student | Full-Stack Development Enthusiast
